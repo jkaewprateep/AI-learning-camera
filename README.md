@@ -23,6 +23,8 @@ AI learning image VDO, possible object variables
 : Library and variables
 """""""""""""""""""""""""""""""""""""""""""""
 ## Import libraries
+import os;
+
 import cv2;                                 # 🧸💬 CV2 for generics API
 import tensorflow as tf;                    # 🧸💬 Tensorflow for machine learning
 import matplotlib.pyplot as plt;            # 🧸💬 For image plotting
