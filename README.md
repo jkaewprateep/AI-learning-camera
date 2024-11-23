@@ -11,6 +11,9 @@ AI learning image VDO, possible object variables
 </br>
 </br>
 
+[TF_filters_locations]( https://github.com/jkaewprateep/TF_filters_locations-3/blob/main/README.md ) </br>
+[blur_contrast_normalize_filter]( https://github.com/jkaewprateep/blur_contrast_normalize_filter/blob/main/README.md ) </br>
+
 ## References and Variables ##
 
 🧸💬 The fast way for directional device communication is to use their drivers or generics communication when APIs can perform input/output as continuous arrays ```cv2```. Examples of using driver APIs include Windows generics drivers, browsers, and client-based APIs ( TAPI, device generic, COM API, and Active-X ).
