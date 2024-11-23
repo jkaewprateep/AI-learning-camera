@@ -143,6 +143,8 @@ def find_image_countour( image ):
 
 ## Filter ##
 
+💃( 👩‍🏫 )💬 The filtered image can be used from manufacturing, online published resources, or your created filter image because it is a limited method to create input as adaptive input for less time-consuming when performing machine learning train sample data because of some path of the method results are correct and machine learning can select or there is a small number portion of correct sample machine learning can identify, segment and determine the best segment where they should perform. In programming, this method helps with refinements of the programming when programming is difficult to draw in some conditions such as statics conditions machine learning creates an advantage in this area to help craft methods and results for better results and performance. </br>
+
 ```
 """""""""""""""""""""""""""""""""""""""""""""
 : Filter
