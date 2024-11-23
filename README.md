@@ -66,6 +66,18 @@ def find_image_countour( image ):
     return contours
 ```
 
+## Filter ##
+
+```
+def filters( image ):
+
+    ...
+   🧸💬 You can apply filters from CV2, and published filter matrixes example smile faces, edges detection,
+        Gaussian-blur and more, but we focus on AI learning variables in this experiment.
+    
+    return image
+```
+
 ## Animate updates ##
 
 ```
