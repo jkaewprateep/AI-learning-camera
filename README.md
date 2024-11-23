@@ -47,6 +47,46 @@ image = tf.image.resize( image, [48, 86] )                   # 🧸💬 Image re
 im = plt.imshow( image )                                     # 🧸💬 Display image background
 ```
 
+## Callback class ##
+
+```
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+: Callback
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+class custom_callback(tf.keras.callbacks.Callback):
+
+	def __init__(self, patience=0):
+		self.best_weights = None
+		self.best = 999999999999999
+		self.patience = patience
+	
+	def on_train_begin(self, logs={}):
+		self.best = 999999999999999
+		self.wait = 0
+		self.stopped_epoch = 0
+
+	def on_epoch_end(self, epoch, logs={}):
+		if(logs['accuracy'] == None) : 
+			pass
+		
+		if logs['loss'] < self.best :
+			self.best = logs['loss']
+			self.wait = 0
+			self.best_weights = self.model.get_weights()
+		else :
+			self.wait += 1
+			if self.wait >= self.patience:
+				self.stopped_epoch = epoch
+				self.model.stop_training = True
+				print("Restoring model weights from the end of the best epoch.")
+				self.model.set_weights(self.best_weights)
+
+		if self.wait > self.patience :
+			self.model.stop_training = True
+
+custom_callback = custom_callback(patience=8)
+```
+
 ## Draw boundary image ##
 
 ```
@@ -107,20 +147,24 @@ def filters( image ):
 : Animate
 """""""""""""""""""""""""""""""""""""""""""""
 def update( frame ):
+    global model;
+    global history;
     global iCount;
-
+    global checkpoint_path;
+    global dimensions;
+    
+    iCount = iCount + 1;
     ret, frame = cap.read();
     
-    if ( ret ):
+    if ( ret ):        
         img = cv2.cvtColor( frame, cv2.COLOR_BGR2RGB )
-
         
         frames.append(img)
         
         ## image
         image = tf.keras.utils.array_to_img(img);
         o_image = tf.image.resize( image, [48, 86] )
-        o_image = tf.cast( o_image, dtype=tf.int32 )        
+        o_image = tf.cast( o_image, dtype=tf.int32 )       
         
         image_forcontour = filters( o_image )
         
@@ -135,20 +179,97 @@ def update( frame ):
         min_y = min([ y for x, y in coords]) // 1;
         max_y = max([ y for x, y in coords]) // 1;
         
-        dimensions = [ float( min_x / width ), float( min_y / height ), float( max_x / width ), float( max_y / height ) ];
-        print(dimensions);
+        ###       
+        if iCount < 3 :
+            dimensions = [ float( min_x / width ), float( min_y / height ), float( max_x / width ), float( max_y / height ) ];
+        else :
+            new_image_data = tf.reshape( o_image, [ 1, 1, 1, 48 * 86 * 3 ] );  
+            new_image_data = tf.cast( new_image_data, dtype=tf.float32 );
+            size_dimension = tf.constant([min_x, min_y], shape=(1, 1, 1, 2), dtype=tf.float32);
+            new_image_data = tf.concat([new_image_data, size_dimension], axis=3);  
+        
+            result = predict_action( new_image_data );
+            print("result: ", result);
+            if result == 1 :
+                dimensions = [ float( min_x / width ), float( min_y / height ), float( max_x / width ), float( max_y / height ) ];
         
         image = draw_rectang( image, dimensions );
         ###
+        
+        ###
+        data_row = create_dataset( o_image, min_x, min_y );
+        history = model.fit(data_row, epochs=1, callbacks=[custom_callback]);
+        if iCount % 3 == 0 :
+            model.save_weights(checkpoint_path);
+            
+        print( data_row );
 
-        fig.axes[0].axis( 'off' )
-        fig.axes[0].grid( False 
+        fig.axes[0].axis( 'off' );
+        fig.axes[0].grid( False );
         image = tf.squeeze(image);
         image = tf.keras.utils.array_to_img( image );
         im.set_array( image );
         plt.imshow( image );
         
     return im
+```
+
+## Prediction ##
+
+```
+def predict_action( dataset ):
+    global model;
+
+    # print( "dataset: ", dataset.shape );
+
+    predictions = model.predict(tf.expand_dims(tf.expand_dims(tf.squeeze(dataset), axis=0 ), axis=0 ));
+    score = tf.nn.softmax(predictions[0])
+
+    return int(tf.math.argmax(score))
+```
+
+## Create dataset ##
+
+```
+def create_dataset( image_data, init_x, init_y ):
+    global listof_items;
+    global iCount;
+    
+    # 🧸💬 Variables in the scopes of our experiment are 1. The size is width x height, 2. average of colours
+        # Pixels ( R, G, B image system ), and position of the image min_x and min_y.
+        
+    # image_data size (48, 86)
+    image_data = tf.reshape( image_data, [ 1, 1, 1, 48 * 86 * 3 ] );  
+    image_data = tf.cast( image_data, dtype=tf.float32 );
+    size_dimension = tf.constant([init_x, init_y], shape=(1, 1, 1, 2), dtype=tf.float32);
+    image_data = tf.concat([image_data, size_dimension], axis=3);      
+    
+    print( image_data.shape );
+    
+    
+    ### LABEL
+    ### 1. Result from similarity
+    LABEL = tf.constant([0], shape=(1, 1), dtype=tf.float32);
+    
+    if [init_x, init_y] not in listof_items :
+        listof_items.append([init_x, init_y]);
+    else :
+        LABEL = tf.constant([1], shape=(1, 1), dtype=tf.float32);
+    
+    ### 2. Result from prediction
+    result = predict_action( image_data );
+    if iCount % 5 == 0 :
+        listof_items.append([init_x, init_y]);
+    elif iCount % 6 == 0 :
+        listof_items.append([init_x, init_y]);
+        
+    ### reduce number of focus
+    listof_items = listof_items[:-16];
+    ###
+    
+    dataset = tf.data.Dataset.from_tensor_slices((image_data, LABEL));
+
+    return dataset;
 ```
 
 ## Task executor ##
