@@ -242,6 +242,8 @@ def update( frame ):
 
 ## Prediction ##
 
+🐑💬 ➰ Simple method for prediction from the input denotes [ 0, 1 ] for output and rewards to the system as their result appending to maintain list conditions. </br>
+
 ```
 def predict_action( dataset ):
     global model;
@@ -255,6 +257,8 @@ def predict_action( dataset ):
 ```
 
 ## Create dataset ##
+
+🐑💬 ➰ Dataset creation and data conversion into a preferable format for machine learning train and prediction method. </br>
 
 ```
 def create_dataset( image_data, init_x, init_y ):
@@ -300,6 +304,8 @@ def create_dataset( image_data, init_x, init_y ):
 
 ## Task executor ##
 
+🐑💬 ➰ Task executor control of time running and application run thread, working with statics methods and conditions. </br>
+
 ```
 """""""""""""""""""""""""""""""""""""""""""""
 : Tasks
@@ -308,3 +314,11 @@ while(True):
     ani = animation.FuncAnimation(fig=fig, func=update, frames=40, interval=30)
     plt.show()
 ```
+
+---
+
+<p align="center" width="100%">
+    <img width="30%" src="https://github.com/jkaewprateep/advanced_mysql_topics_notes/blob/main/custom_dataset.png">
+    <img width="30%" src="https://github.com/jkaewprateep/advanced_mysql_topics_notes/blob/main/custom_dataset_2.png"> </br>
+    <b> 🥺💬 รับจ้างเขียน functions </b> </br>
+</p>
