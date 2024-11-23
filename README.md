@@ -125,6 +125,8 @@ def draw_rectang( image, dimensions ) :
 
 ## Draw image countour ##
 
+👨🏻‍🏫💬 The image contours method is the fastest way to connect points to target results as legend by their determination values, diameter, and edges when applied to the image processing. It helps to save the computation process when you have detected their neighborhood pixels and you need to perform fast drawing regions from the similar criteria input pixels to perform the next criteria outside the bounding box or you can use information inside the region drawing by this method for the recognition step or identification step. </br>
+
 ```
 """""""""""""""""""""""""""""""""""""""""""""
 : Image legend locator
