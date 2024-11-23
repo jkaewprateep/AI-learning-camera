@@ -65,3 +65,51 @@ def find_image_countour( image ):
 
     return contours
 ```
+
+## Animate updates ##
+
+```
+def update( frame ):
+    global iCount;
+
+    ret, frame = cap.read();
+    
+    if ( ret ):
+        img = cv2.cvtColor( frame, cv2.COLOR_BGR2RGB )
+
+        
+        frames.append(img)
+        
+        ## image
+        image = tf.keras.utils.array_to_img(img);
+        o_image = tf.image.resize( image, [48, 86] )
+        o_image = tf.cast( o_image, dtype=tf.int32 )        
+        
+        image_forcontour = filters( o_image )
+        
+        fig.axes[0].clear()
+        plt.axis( 'off' )
+        
+        coords = find_image_countour( image_forcontour )
+        
+        (width, height) = (48, 86);
+        min_x = min([ x for x, y in coords]) // 1;
+        max_x = max([ x for x, y in coords]) // 1;
+        min_y = min([ y for x, y in coords]) // 1;
+        max_y = max([ y for x, y in coords]) // 1;
+        
+        dimensions = [ float( min_x / width ), float( min_y / height ), float( max_x / width ), float( max_y / height ) ];
+        print(dimensions);
+        
+        image = draw_rectang( image, dimensions );
+        ###
+
+        fig.axes[0].axis( 'off' )
+        fig.axes[0].grid( False 
+        image = tf.squeeze(image);
+        image = tf.keras.utils.array_to_img( image );
+        im.set_array( image );
+        plt.imshow( image );
+        
+    return im
+```
