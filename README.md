@@ -74,6 +74,10 @@ def filters( image ):
     ...
    🧸💬 You can apply filters from CV2, and published filter matrixes example smile faces, edges detection,
         Gaussian-blur and more, but we focus on AI learning variables in this experiment.
+
+    ...
+   🧸💬 Variables in the scopes of our experiment are 1. The size is width x height, 2. average of colours
+        Pixels ( R, G, B image system ), and position of the image min_x and min_y.
     
     return image
 ```
