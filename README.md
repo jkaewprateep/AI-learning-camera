@@ -37,3 +37,31 @@ image = tf.io.decode_jpeg( image, channels=0 )               # 🧸💬 Decoder 
 image = tf.image.resize( image, [48, 86] )                   # 🧸💬 Image resizing
 im = plt.imshow( image )                                     # 🧸💬 Display image background
 ```
+
+## Draw boundary image ##
+
+```
+def draw_rectang( image, dimensions ) :
+
+    boxes = tf.reshape(dimensions, [1, 1, 4]);
+    image = tf.cast(image, dtype=tf.float32);
+    
+    colors = tf.constant([[255.0, 0.0, 0.0, 0.0]], shape=(1, 4));
+    boxes_custom = tf.constant( dimensions, shape=(1, 1, 4)).numpy();
+    new_image = tf.image.draw_bounding_boxes( tf.expand_dims(image, axis=0), boxes_custom, colors );
+    
+    return new_image;
+```
+
+## Draw image countour ##
+
+```
+def find_image_countour( image ):
+
+    image = tf.keras.utils.img_to_array( image )
+    image = tf.squeeze( image ).numpy()
+
+    contours = measure.find_contours( image, 200 );
+
+    return contours
+```
