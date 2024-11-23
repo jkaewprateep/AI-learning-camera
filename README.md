@@ -13,6 +13,9 @@ AI learning image VDO, possible object variables
 </br>
 </br>
 
+🐐💬 Learning and experiment results are not only applied for object detection; the method's output can be performed with simple applications such as games' autopilot or working with multiple streams, such as instruments note detection and learning rules from target domain output (game controller key or actions from prediction results or notes from music instruments' periods ). </br>
+🦭💬 In the working domain we are familiars with the word calling data communications as reliability similarly with the staging message to identify the work streams of message communications they are reliable with the methods, application flows, and business objective with scores results, and time or scales matching for prediction and statistical, identity and target and campaigns prediction with realtime data or more data communication subject on the reliability similarity. </br>
+
 <p align="center" width="100%">
     <img width="14%" src="https://github.com/jkaewprateep/AI-learning-camera/blob/main/Movement_detection.gif">
     <img width="11%" src="https://github.com/jkaewprateep/AI-learning-camera/blob/main/WaterWorld_GamePlay.gif">
