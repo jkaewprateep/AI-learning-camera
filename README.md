@@ -1,6 +1,8 @@
 # AI-learning-camera
 AI learning image VDO, possible object variables
 
+🧸💬 By using the AI machine learning library TensorFlow allowed the creation of simple iterations method adaptation in Python programming language to train input values from VDO and legend boundary image's object location identification information from learning feedback results of AI machine learning. The program is designed to concatenate the random position of the starting points on XY coordinate and boundary box size for AI machine learning train inputs likelihood of the object in the image inside the boundary as [ 0, 1 ] domain prediction results. </br>
+
 <p align="center" width="100%">
     <img width="55%" src="https://github.com/jkaewprateep/AI-learning-camera/blob/main/tensorflow_01.png">
     <img width="13.5%" src="https://github.com/jkaewprateep/AI-learning-camera/blob/main/kid_25.jpg">
