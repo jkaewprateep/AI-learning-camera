@@ -164,6 +164,8 @@ def filters( image ):
 
 ## Animate updates ##
 
+🦤💬 Animate to update the application, this method allows iteration by the refreshing rates of the Matplotlib animation for repeating tasks, we can perform training and prediction results the same as working with AI machine learning streams in AI auto-pilots for games, real-time stream input, VDO and communication data application. The model training and prediction can be performed on a small portion when a larger portion can be used from the save the result or working all from the input VDO streams. </br>
+
 ```
 """""""""""""""""""""""""""""""""""""""""""""
 : Animate
