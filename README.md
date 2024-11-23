@@ -30,7 +30,7 @@ AI learning image VDO, possible object variables
 
 ## References and Variables ##
 
-🧸💬 The fast way for directional device communication is to use their drivers or generics communication when APIs can perform input/output as continuous arrays ```cv2```. Examples of using driver APIs include Windows generics drivers, browsers, and client-based APIs ( TAPI, device generic, COM API, and Active-X ).
+🧸💬 The fast way for directional device communication is to use their drivers or generics communication when APIs can perform input/output as continuous arrays ```cv2```. Examples of using driver APIs include Windows generics drivers, browsers, and client-based APIs ( TAPI, device generic, COM API, and Active-X ). </br>
 
 ```
 """""""""""""""""""""""""""""""""""""""""""""
@@ -62,6 +62,8 @@ im = plt.imshow( image )                                     # 🧸💬 Display 
 ```
 
 ## Callback class ##
+
+🐯💬 Culture, INFO The callback method is preferred for message communication, events, and actions handlings as in application development method preferences and user manual adaptations. Using the callback method creates of application flow easy to read with debugging messages and methods output as steps, version control, application flows and partitions update for planning and fewer module effects when applying the updated or testing results from a single or fewer modules as possible. </br>
 
 ```
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
