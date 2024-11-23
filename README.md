@@ -16,6 +16,9 @@ AI learning image VDO, possible object variables
 🧸💬 The fast way for directional device communication is to use their drivers or generics communication when APIs can perform input/output as continuous arrays ```cv2```. Examples of using driver APIs include Windows generics drivers, browsers, and client-based APIs ( TAPI, device generic, COM API, and Active-X ).
 
 ```
+"""""""""""""""""""""""""""""""""""""""""""""
+: Library and variables
+"""""""""""""""""""""""""""""""""""""""""""""
 ## Import libraries
 import cv2;                                 # 🧸💬 CV2 for generics API
 import tensorflow as tf;                    # 🧸💬 Tensorflow for machine learning
@@ -41,6 +44,9 @@ im = plt.imshow( image )                                     # 🧸💬 Display 
 ## Draw boundary image ##
 
 ```
+"""""""""""""""""""""""""""""""""""""""""""""
+: Image Boundary
+"""""""""""""""""""""""""""""""""""""""""""""
 def draw_rectang( image, dimensions ) :
 
     boxes = tf.reshape(dimensions, [1, 1, 4]);
@@ -56,6 +62,9 @@ def draw_rectang( image, dimensions ) :
 ## Draw image countour ##
 
 ```
+"""""""""""""""""""""""""""""""""""""""""""""
+: Image legend locator
+"""""""""""""""""""""""""""""""""""""""""""""
 def find_image_countour( image ):
 
     image = tf.keras.utils.img_to_array( image )
@@ -69,6 +78,9 @@ def find_image_countour( image ):
 ## Filter ##
 
 ```
+"""""""""""""""""""""""""""""""""""""""""""""
+: Filter
+"""""""""""""""""""""""""""""""""""""""""""""
 def filters( image ):
 
     ...
@@ -85,6 +97,9 @@ def filters( image ):
 ## Animate updates ##
 
 ```
+"""""""""""""""""""""""""""""""""""""""""""""
+: Animate
+"""""""""""""""""""""""""""""""""""""""""""""
 def update( frame ):
     global iCount;
 
@@ -128,4 +143,15 @@ def update( frame ):
         plt.imshow( image );
         
     return im
+```
+
+## Task executor ##
+
+```
+"""""""""""""""""""""""""""""""""""""""""""""
+: Tasks
+"""""""""""""""""""""""""""""""""""""""""""""
+while(True):
+    ani = animation.FuncAnimation(fig=fig, func=update, frames=40, interval=30)
+    plt.show()
 ```
