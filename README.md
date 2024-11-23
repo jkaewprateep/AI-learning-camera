@@ -181,7 +181,8 @@ def update( frame ):
         
         ###       
         if iCount < 3 :
-            dimensions = [ float( min_x / width ), float( min_y / height ), float( max_x / width ), float( max_y / height ) ];
+            dimensions = [ float( min_x / width ), float( min_y / height ), float( max_x / width ),
+				float( max_y / height ) ];
         else :
             new_image_data = tf.reshape( o_image, [ 1, 1, 1, 48 * 86 * 3 ] );  
             new_image_data = tf.cast( new_image_data, dtype=tf.float32 );
@@ -191,7 +192,8 @@ def update( frame ):
             result = predict_action( new_image_data );
             print("result: ", result);
             if result == 1 :
-                dimensions = [ float( min_x / width ), float( min_y / height ), float( max_x / width ), float( max_y / height ) ];
+                dimensions = [ float( min_x / width ), float( min_y / height ), float( max_x / width ),
+				float( max_y / height ) ];
         
         image = draw_rectang( image, dimensions );
         ###
