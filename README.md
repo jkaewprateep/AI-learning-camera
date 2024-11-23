@@ -24,6 +24,7 @@ AI learning image VDO, possible object variables
 """""""""""""""""""""""""""""""""""""""""""""
 ## Import libraries
 import os;
+from os.path import exists;
 
 import cv2;                                 # 🧸💬 CV2 for generics API
 import tensorflow as tf;                    # 🧸💬 Tensorflow for machine learning
