@@ -103,6 +103,8 @@ class custom_callback(tf.keras.callbacks.Callback):
 custom_callback = custom_callback(patience=8)
 ```
 
+🦁💬 That is because there are many methods and working results can compare direct or indirect methods one way to prepare data from the image and objects finding results in the picture is to create a bounding box reflecting image objects and results from their detection can label or indicate the values result or similarity or likelihood value with target reference to identify of the value on XY coordinate and singular value ( identify value or measurement in two system measurements method ). </br>
+
 ## Draw boundary image ##
 
 ```
