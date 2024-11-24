@@ -13,6 +13,18 @@ AI learning image VDO, possible object variables
 </br>
 </br>
 
+## application development platforms ##
+
+🧸💬 Notepad ++, Tensorflow, Python 3.xx, and Matplotlib for simple Python script application learning and development of the AI machine learning by exposed variables of image streams raws format and random window, segmentation non-supervised learning algorithms. </br>
+🦛💬 Long duration non-supervised learning algorithms simply by random segmentation format ‼️ </br>
+
+<p align="center" width="100%">
+    <img width="55%" src="https://github.com/jkaewprateep/AI-learning-camera/blob/main/Screenshot%202024-11-24%20075922.png"> </br>
+    <b> Application development platforms </b> </br>
+</p>
+</br>
+</br>
+
 🐐💬 Learning and experiment results are not only applied for object detection; the method's output can be performed with simple applications such as games' autopilot or working with multiple streams, such as instruments note detection and learning rules from target domain output (game controller key or actions from prediction results or notes from music instruments' periods ). </br>
 🦭💬 In the working domain we are familiars with the word calling data communications as reliability similarly with the staging message to identify the work streams of message communications they are reliable with the methods, application flows, and business objective with scores results, and time or scales matching for prediction and statistical, identity and target and campaigns prediction with realtime data or more data communication subject on the reliability similarity. </br>
 
