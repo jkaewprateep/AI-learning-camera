@@ -16,7 +16,7 @@ AI learning image VDO, possible object variables
 ## application development platforms ##
 
 🧸💬 Notepad ++, Tensorflow, Python 3.xx, and Matplotlib for simple Python script application learning and development of the AI machine learning by exposed variables of image streams raws format and random window, segmentation non-supervised learning algorithms. </br>
-🦛💬 Long duration non-supervised learning algorithms simply by random segmentation format ‼️ </br>
+🦛💬 Long duration non-supervised learning time algorithms simply by random segmentation format ‼️ </br>
 
 <p align="center" width="100%">
     <img width="55%" src="https://github.com/jkaewprateep/AI-learning-camera/blob/main/Screenshot%202024-11-24%20075922.png"> </br>
